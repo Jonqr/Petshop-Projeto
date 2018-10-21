@@ -1,0 +1,38 @@
+
+<ion-header>
+
+  
+</ion-header>
+
+
+<ion-content padding>
+   
+
+      
+      <div class="agenda">
+        <div>
+            <h4 style="text-align: center;">Selecione uma data</h4>
+        </div>
+        <ion-item >
+          <h4 style="text-align: center;">Selecione uma data</h4>
+            <ion-label style="text-align: center;">Escolha um dia ou mês</ion-label>
+            <ion-datetime displayFormat="DD/MMMM" [(ngModel)]="dataInicial"
+            monthNames= "janeiro, fevereiro, março, abril, maio, junho, julho, agosto, setembro, outubro, novembro, dezembro"
+            doneText="Selecionar"
+            cancelText="Cancelar" 
+            [min]="maxDate">
+            </ion-datetime>
+      </ion-item>  
+      </div>
+      <h4>{{dia}}/{{mes}}/{{ano}}</h4>
+          
+      <h3 class="horarios">Selecione um horario:</h3>
+      <br>
+      <ion-list style="text-align: center;">
+        <ion-item *ngFor="let info of agendaF " style="text-align: center;" (click)="selectData(info)">
+          <h3>Horario:{{info.hora}}  Data:{{info.Data}}</h3> 
+        </ion-item>
+      </ion-list>      
+  
+
+</ion-content>
